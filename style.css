@@ -31,6 +31,10 @@ h1 {
   padding-top: 10px;
 }
 
+.hide {
+  display:none;
+}
+
 #subheader {
   max-width: inherit;
   background-color: #fff;
