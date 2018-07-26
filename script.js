@@ -12,7 +12,12 @@ function setColors() {
   for (var i = 0; i < squares.length; i++ ) {
     squares[i].style.backgroundColor = colors[i];
     squares[i].addEventListener("click", function(){
-      console.log("clicked!!")
+      if(this.style.backgroundColor === pickedColor){
+        console.log("true");
+      }
+      else {
+        console.log("false");
+      }
     })
   }
 
