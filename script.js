@@ -6,20 +6,22 @@ var pickedColor;
 
 setColors();
 
-
 function setColors() {
   for(var i= 0; i < 6; i++) {
     colors [i] = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
   }
+  
+  for (var i = 0; i < squares.length; i++ ) {
+    squares[i].style.background = colors[i];
+  }
+
   pickedColor = colors[Math.floor(Math.random() * 6)]
   selectedColor.textContent = pickedColor;
 }
 
-for (var i = 0; i < squares.length; i++ ) {
-  squares[i].style.background = colors[i];
-}
+
 
 
 resetGame.addEventListener("click", function(){
-  setColors;
+  setColors();
 });
