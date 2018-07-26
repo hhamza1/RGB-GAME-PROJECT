@@ -1,10 +1,21 @@
 body {
   background-color: #232323;
+  font-family: Raleway;
+  margin : 0 ;
 }
 
 h1 {
-  color: white;
+  color: #fff;
   text-align: center;
+}
+
+.square {
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  background-color: purple;
+  border-radius: 5px;
+  float: left;
 }
 
 #container {
@@ -16,11 +27,20 @@ h1 {
   text-transform: uppercase;
 }
 
-.square {
-  width: 30%;
-  padding-bottom: 30%;
-  margin: 1.66%;
-  background-color: purple;
-  border-radius: 5px;
+#top-header {
+  background-color: #9898FF;
+  padding-top: 10px;
+}
+
+#subheader {
+  max-width: inherit;
+  background-color: #fff;
+  font-weight: 600;
+  color: #9898FF;
+  padding-left: 30%;
+}
+
+#new-game {
+  margin: 0 auto;
   float: left;
 }
