@@ -4,15 +4,13 @@ var resetGame = document.querySelector("#new-game");
 var colors = new Array();
 var pickedColor;
 
-setColors();
-
 function setColors() {
   for(var i= 0; i < 6; i++) {
     colors [i] = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
   }
-  
+
   for (var i = 0; i < squares.length; i++ ) {
-    squares[i].style.background = colors[i];
+    squares[i].style.backgroundColor = colors[i];
   }
 
   pickedColor = colors[Math.floor(Math.random() * 6)]
@@ -20,8 +18,17 @@ function setColors() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function(event){
+  setColors();
+})
 
 
 resetGame.addEventListener("click", function(){
   setColors();
 });
+
+for (var i = 0; i < squares.length; i++ ) {
+  squares[i].addEventListener("click", function(){
+      console.log(squares[i].style.backgroundColor);
+  })
+}
