@@ -4,6 +4,21 @@ body {
   margin : 0 ;
 }
 
+button {
+  border : 0;
+  background-color: #fff;
+  color: #9898FF;
+  font-family: Raleway;
+  font-size: 1em;
+  font-weight: 600;
+
+}
+
+button:hover {
+  color: #FFF;
+  background-color: #9898FF;
+}
+
 h1 {
   color: #fff;
   text-align: center;
@@ -22,6 +37,7 @@ h1 {
   margin: 0 auto;
 }
 
+
 #selectedColor {
   text-transform: uppercase;
 }
@@ -31,24 +47,10 @@ h1 {
   padding-top: 10px;
 }
 
-.hide {
-  display:none;
-}
-
 #subheader {
-  max-width: inherit;
+
+  text-align: center;
   background-color: #fff;
   font-weight: 600;
   color: #9898FF;
-  padding-left: 30%;
-}
-
-#new-game {
-  margin: 0 auto;
-  float: left;
-}
-
-#new-game:hover {
-  background-color: #9898FF;
-  color: #fff;
 }
