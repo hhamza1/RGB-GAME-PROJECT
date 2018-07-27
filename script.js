@@ -1,43 +1,55 @@
-var squares = document.querySelectorAll(".square");
-var mods = document.querySelectorAll(".mod");
+var colors = [];
+var pickedColor;
 var squaresNum = 6;
-var topHeader = document.querySelector("h1");
-var selectedColor =  document.querySelector("#selectedColor");
-var resetGame = document.querySelector("#new-game");
-var messageDisplay = document.querySelector("#try-again");
 var easyMod = document.getElementById("easyMod");
 var hardMod = document.getElementById("hardMod");
-var colors = setColors(squaresNum);
-var pickedColor;
+var messageDisplay = document.querySelector("#try-again");
+var mods = document.querySelectorAll(".mod");
+var resetGame = document.querySelector("#new-game");
+var selectedColor =  document.querySelector("#selectedColor");
+var squares = document.querySelectorAll(".square");
+var topHeader = document.querySelector("h1");
 
-for (var i = 0; i < squares.length; i++ ) {
-    squares[i].style.backgroundColor = colors[i];
-    selectedColor.textContent = pickColor();
-    squares[i].addEventListener("click", function(){
-      var clickedColor = this.style.backgroundColor;
-      if( clickedColor === pickedColor){
-          messageDisplay.textContent = "Correct";
-          topHeader.style.backgroundColor = pickedColor;
-          resetGame.textContent = "Play Again?";
-          winningColor(clickedColor);
+gameInit();
 
-      }
-      else {
-        this.style.backgroundColor = "#232323";
-        messageDisplay.textContent = "Try Again";
-      }
-    })
-  }
+function gameInit() {
+  setUpMod();
+  displaySquares();
+  reset();
+}
 
-for(var i=0; i< mods.length; i++){
-    mods[i].addEventListener("click", function(){
-        mods[0].classList.remove("selected");
-        mods[1].classList.remove("selected");
-        this.classList.add("selected");
-        this.textContent === "Easy" ? squaresNum = 3 : squaresNum = 6;
-        reset();
-      });
-  }
+function displaySquares() {
+  for (var i = 0; i < squares.length; i++ ) {
+      squares[i].style.backgroundColor = colors[i];
+      selectedColor.textContent = pickColor();
+      squares[i].addEventListener("click", function(){
+        var clickedColor = this.style.backgroundColor;
+        if( clickedColor === pickedColor){
+            messageDisplay.textContent = "Correct";
+            topHeader.style.backgroundColor = pickedColor;
+            resetGame.textContent = "Play Again?";
+            winningColor(clickedColor);
+
+        }
+        else {
+          this.style.backgroundColor = "#232323";
+          messageDisplay.textContent = "Try Again";
+        }
+      })
+    }
+}
+
+function setUpMod(){
+  for(var i=0; i< mods.length; i++){
+      mods[i].addEventListener("click", function(){
+          mods[0].classList.remove("selected");
+          mods[1].classList.remove("selected");
+          this.classList.add("selected");
+          this.textContent === "Easy" ? squaresNum = 3 : squaresNum = 6;
+          reset();
+        });
+    }
+}
 
 
 resetGame.addEventListener("click", function(){
