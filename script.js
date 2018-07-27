@@ -1,11 +1,12 @@
 var squares = document.querySelectorAll(".square");
-var topHeader = document.getElementById("top-header");
+var squaresNum = 6;
+var topHeader = document.querySelector("h1");
 var selectedColor =  document.querySelector("#selectedColor");
 var resetGame = document.querySelector("#new-game");
 var messageDisplay = document.querySelector("#try-again");
 var easyMod = document.getElementById("easyMod");
 var hardMod = document.getElementById("hardMod");
-var colors = setColors(6);
+var colors = setColors(squaresNum);
 var pickedColor;
 
 for (var i = 0; i < squares.length; i++ ) {
@@ -59,8 +60,9 @@ function pickColor() {
 
 resetGame.addEventListener("click", function(){
    resetGame.textContent = "New Colors?";
+   topHeader.style.backgroundColor = "#9898FF";
    messageDisplay.textContent = "";
-   colors = setColors(6);
+   colors = setColors(squaresNum);
    pickColor();
    for(var i=0; i< squares.length; i++){
      squares[i].style.background = colors[i];
@@ -70,8 +72,10 @@ resetGame.addEventListener("click", function(){
 easyMod.addEventListener("click",function() {
   easyMod.classList.add("selected");
   hardMod.classList.remove("selected");
-  colors = setColors(3);
+  squaresNum = 3;
+  colors = setColors(squaresNum);
   selectedColor.textContent = pickColor();
+  topHeader.style.backgroundColor = "#9898FF";
   messageDisplay.textContent = "";
   resetGame.textContent = "New Colors?";
 
@@ -88,8 +92,10 @@ easyMod.addEventListener("click",function() {
 hardMod.addEventListener("click",function() {
   hardMod.classList.add("selected");
   easyMod.classList.remove("selected");
-  colors = setColors(6);
+  squaresNum = 6;
+  colors = setColors(squaresNum);
   selectedColor.textContent = pickColor();
+  topHeader.style.backgroundColor = "#9898FF";
   messageDisplay.textContent = "";
   resetGame.textContent = "New Colors?";
 

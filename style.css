@@ -5,12 +5,14 @@ body {
 }
 
 button {
-  border : 0;
+  border : none;
   background-color: #fff;
+  text-transform: uppercase;
   color: #9898FF;
   font-family: Raleway;
   font-size: 1em;
   font-weight: 600;
+  transition: all 0.4s;
 
 }
 
@@ -19,22 +21,28 @@ button:hover {
   background-color: #9898FF;
 }
 
-.selected {
-  color: #FFF;
-  background-color: #9898FF;
-}
+
 
 h1 {
   color: #fff;
   text-align: center;
+  background-color: #9898FF;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.selected {
+  color: #FFF;
+  background-color: #9898FF;
 }
 
 .square {
   width: 30%;
   padding-bottom: 30%;
   margin: 1.66%;
-  border-radius: 5px;
+  border-radius: 10px;
   float: left;
+  transition: background 0.4s;
 }
 
 #container {
@@ -42,20 +50,20 @@ h1 {
   margin: 0 auto;
 }
 
-
 #selectedColor {
   text-transform: uppercase;
-}
-
-#top-header {
-  background-color: #9898FF;
-  padding-top: 10px;
+  display: block;
+  font-size: 1.5em;
 }
 
 #subheader {
-
   text-align: center;
   background-color: #fff;
   font-weight: 600;
   color: #9898FF;
+}
+
+#try-again {
+  display: inline-block;
+  width: 20%;
 }
