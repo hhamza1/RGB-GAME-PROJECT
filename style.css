@@ -19,6 +19,11 @@ button:hover {
   background-color: #9898FF;
 }
 
+.selected {
+  color: #FFF;
+  background-color: #9898FF;
+}
+
 h1 {
   color: #fff;
   text-align: center;
